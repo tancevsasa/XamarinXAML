@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinXAML.ViewModels;
 
 namespace XamarinXAML
 {
@@ -12,6 +13,12 @@ namespace XamarinXAML
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = new ChatPageViewModel();
+        }
+
+        public void OnListTapped(object sender, ItemTappedEventArgs e)
+        {
+            chatInput.UnFocusEntry();
         }
     }
 }

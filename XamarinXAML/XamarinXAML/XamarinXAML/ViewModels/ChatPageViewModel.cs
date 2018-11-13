@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -16,8 +17,8 @@ namespace XamarinXAML.ViewModels
 
         public ChatPageViewModel()
         {
-            Messages.Add(new Message() { Text = "Hi" });
-            Messages.Add(new Message() { Text = "How are you?"});
+            Messages.Add(new Message() { Text = "I like Blue. Shall we be ShoeMates?" });
+            Messages.Add(new Message() { Text = "Good Idea :) My number is +454211451", User = App.User });
 
             OnSendCommand = new Command(() =>
             {
@@ -28,5 +29,7 @@ namespace XamarinXAML.ViewModels
                
             });
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

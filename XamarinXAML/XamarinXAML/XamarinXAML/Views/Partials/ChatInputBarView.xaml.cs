@@ -13,6 +13,8 @@ namespace XamarinXAML.Views.Partials
         {
             InitializeComponent();
 
+            this.BindingContext = new ChatPageViewModel();
+
             if (Device.RuntimePlatform == Device.iOS)
             {
                 this.SetBinding(HeightRequestProperty, new Binding("Height", BindingMode.OneWay, null, null, null, chatTextInput));
@@ -20,7 +22,11 @@ namespace XamarinXAML.Views.Partials
         }
         public void Handle_Completed(object sender, EventArgs e)
         {
-            (this.Parent.Parent.BindingContext as ChatPageViewModel).OnSendCommand.Execute(null);
+            if (BindingContext != null)
+            {
+                (this.Parent.Parent.BindingContext as ChatPageViewModel).OnSendCommand.Execute(null);
+            }
+            
             chatTextInput.Focus();
         }
 
