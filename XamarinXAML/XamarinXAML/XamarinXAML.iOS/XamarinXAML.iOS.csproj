@@ -93,7 +93,9 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +150,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -156,5 +158,14 @@
       <Project>{1ECAF9A1-EEFF-4BD7-A603-61250CAC0138}</Project>
       <Name>XamarinXAML</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profilephoto.png" />
   </ItemGroup>
 </Project>

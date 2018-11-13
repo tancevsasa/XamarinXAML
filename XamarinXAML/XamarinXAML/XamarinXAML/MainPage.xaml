@@ -1,15 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XamarinXAML"
-             x:Class="XamarinXAML.MainPage">
+             xmlns:helpers="clr-namespace:XamarinXAML.Helpers;assembly=XamarinXAML"
+             x:Class="XamarinXAML.MainPage"
+             xmlns:partials="clr-namespace:XamarinXAML.Views.Partials">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.Content>
+
         <Grid Margin="20">
             <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0"  Aspect="AspectFit" Margin="-20,-20,-20,0"
+                   Source="Background.png" />
+            <BoxView Grid.Row="1" BackgroundColor="White" Margin="-20,0,-20,0"/>
+            <Label Grid.Row="1" Text="Nike Adidas Sneakers" VerticalTextAlignment="End"/>
+            <Label Grid.Row="2" Text="This shoe is cool and it is almost not used.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." VerticalTextAlignment="Start" />
+            <BoxView Grid.Row="3"  Margin="-20,0,-20,0" BackgroundColor="Black"/>
+            <Label Grid.Row="4"  Text="Size 43" Margin="0,10,0,0" />
+            <Grid Grid.Row="5" BackgroundColor="#FAFAFA " Margin="-20,10,-20,20" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="About the Seller: " Margin="20,10,20,0"/>
+                <Image Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Source="profilephoto.png" HorizontalOptions="Start" Margin="20,10,20,0"/>
+                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
+                       Text="Jacob H." Margin="80,10,0,0"/>
+                <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="End" VerticalTextAlignment="Start"
+                       Text="41 Years Old" Margin="20,0,0,0"/>
+                <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Start" Text="2300 Copenhagen" Margin="10,0,20,0"/>
+                <Button Grid.Row="3" Grid.Column="0" CornerRadius="15" Margin="10"
+                        Text="More from Seller"  BackgroundColor="Blue" TextColor="White" />
+                <Button Grid.Row="3" Grid.Column="1" CornerRadius="15" Margin="10"
+                        Text="Report" BackgroundColor="Red" TextColor="White"/>
+                <BoxView Grid.Row="4" Grid.ColumnSpan="2" Margin="-20,0,-20,0" BackgroundColor="Black" />
+                <ListView Grid.Row="5" Grid.ColumnSpan="2"
+                          ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                          ItemsSource="{Binding Messages}" 
+                          Margin="0" 
+                          HasUnevenRows="True" 
+                          VerticalOptions="FillAndExpand" 
+                          SeparatorColor="Transparent" >
+                </ListView>
+                <BoxView Grid.ColumnSpan="2"  HorizontalOptions="FillAndExpand"
+                         HeightRequest="1"
+                         BackgroundColor="LightGray"
+                         Grid.Row="6"/>
+                <partials:ChatInputBarView Grid.Row="7"
+                                           Grid.ColumnSpan="2"
+                                           Margin="0,0,10,0"/>
             </Grid>
+
+        </Grid>
     </ContentPage.Content>
 
 </ContentPage>
