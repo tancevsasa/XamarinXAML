@@ -21,7 +21,6 @@
             <carousel:CarouselViewControl x:Name="MainCarousel"
                                           Grid.Row="0" Grid.ColumnSpan="2"
                                           IndicatorsTintColor="Black"
-                                          C
                                           Orientation="Horizontal" 
                                           ShowIndicators="True">
                 <carousel:CarouselViewControl.ItemTemplate>
@@ -30,20 +29,25 @@
                     </DataTemplate>
                 </carousel:CarouselViewControl.ItemTemplate>
             </carousel:CarouselViewControl>
-
-            <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,20,0">
-                <Label Text="Nice Adidas sneakers" TextColor="{StaticResource textColor}" FontAttributes="Bold"/>
-                <Label Text="Posse malis accommodare ei est, vix paulo everti et. Eu graece possim corpora eam. Id eum soleat lucilius senserit. Eu iudicabit erroribus mea, no regione accusamus aliquando per, eos et munere saperet lucilius. Homero expetenda te eum, alia salutandi vim at. Suscipit delicatissimi et sea, bonorum corrumpit expetendis te du" TextColor="{StaticResource secondText}"/>
-                <BoxView HeightRequest="1" BackgroundColor="#E2E2E2"  Margin="-20,0,-20,0"/>
-                <Label Text="Size:43" TextColor="{StaticResource textColor}" FontAttributes="Bold"/>
-            </StackLayout>
-            <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="{OnPlatform Android='20,30,0,20',iOS=0}" RowSpacing="0"
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" Padding="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Nice Adidas sneakers" TextColor="{StaticResource textColor}" FontAttributes="Bold"/>
+                <Label Grid.Row="1" Text="This shoe is cool and it is almost not used.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" TextColor="{StaticResource secondText}" FontSize="Small"/>
+                <BoxView Grid.Row="2" HeightRequest="1" BackgroundColor="#E2E2E2"  Margin="-20,4,-20,0" />
+                <Label Grid.Row="3" Text="Size:43" VerticalTextAlignment="Center" TextColor="{StaticResource textColor}" FontAttributes="Bold"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" Padding="20,0,20,0" RowSpacing="0"
                   BackgroundColor="{StaticResource secondBackground}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -52,19 +56,19 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" 
-                   Text="About the Seller:" TextColor="{StaticResource textColor}" />
+                   Text="About the Seller:" TextColor="{StaticResource textColor}" FontSize="Small" />
                 <Image  Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Source="profilephoto.png"
                         HorizontalOptions="Start"/>
-                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center"
-                       Text="Jacob H." TextColor="{StaticResource textColor}" VerticalTextAlignment="End"/>
-                <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"
-                       Margin="{OnPlatform Android='23,0,0,0'}" Text="41 Years Old" TextColor="{StaticResource textColor}"/>
+                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" Text="Jacob H." TextColor="{StaticResource textColor}" 
+                       VerticalTextAlignment="End" FontSize="Small" Margin="23,0,0,0"/>
+                <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="Small"
+                       Margin="{OnPlatform Android='23,0,0,0',iOS='45,0,0,0'}" Text="41 Years Old" TextColor="{StaticResource textColor}"/>
                 <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Start"
-                Text="2300 Copenhagen" TextColor="{StaticResource textColor}"/>
-                <Button Grid.Row="4" Grid.Column="0" Text="More from Seller" TextColor="White" Padding="{OnPlatform Android=0}" IsEnabled="False"
-                        CornerRadius="20" BackgroundColor="{StaticResource fistButton}" Margin="{OnPlatform Android='0,0,20,0',iOS=0}"  />
-                <Button Grid.Row="4" Grid.Column="1" Text="Report" TextColor="White" Padding="{OnPlatform Android=0}" IsEnabled="False"
-                        CornerRadius="20" BackgroundColor="{StaticResource secondButton}" Margin="{OnPlatform Android='0,0,20,0',iOS=0}"/>
+                Text="2300 Copenhagen" TextColor="{StaticResource textColor}" FontSize="Small"/>
+                <Button Grid.Row="3" Grid.Column="0" Text="More from Seller" TextColor="White" Padding="0" IsEnabled="True"
+                        CornerRadius="20" BackgroundColor="{StaticResource fistButton}" Margin="{OnPlatform Android='0,10,20,0',iOS='0,10,20,0'}"  />
+                <Button Grid.Row="3" Grid.Column="1" Text="Report" TextColor="White" Padding="0" IsEnabled="True"
+                        CornerRadius="20" BackgroundColor="{StaticResource secondButton}" Margin="{OnPlatform Android='0,10,20,0',iOS='0,10,20,0'}"/>
 
             </Grid>
         </Grid>
