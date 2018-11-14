@@ -14,10 +14,10 @@
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="130"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -27,11 +27,11 @@
             <carousel:CarouselViewControl x:Name="MainCarousel" Margin="0,0,0,10"
                                           Grid.Row="0" Grid.ColumnSpan="2"
                                           IndicatorsTintColor="Black"
-                                          Orientation="Horizontal" 
+                                          Orientation="Horizontal"
                                           ShowIndicators="True">
                 <carousel:CarouselViewControl.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding .}" Aspect="Fill"/>
+                        <Image Source="{Binding ., Mode=TwoWay}" Aspect="Fill"/>
                     </DataTemplate>
                 </carousel:CarouselViewControl.ItemTemplate>
             </carousel:CarouselViewControl>
@@ -49,7 +49,7 @@
                        FontAttributes="Bold"/>
                 <Label Grid.Row="1"
                        Text="This shoe is cool and it is almost not used.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                       LineBreakMode="TailTruncation" MaxLines="3"
+                       LineBreakMode="TailTruncation" MaxLines="4"
                        TextColor="{StaticResource secondText}" FontSize="Small" Margin="0,0,0,10"/>
                 
                 <BoxView Grid.Row="2" Margin="-20,0,-20,0" BackgroundColor="#E2E2E2"/>
