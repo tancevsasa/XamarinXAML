@@ -9,5 +9,6 @@
     <Color x:Key="secondButton">#D66C6E</Color>
     <Color x:Key="firstMessage">#BFB6A7</Color>
     <Color x:Key="secondMessage">#FFFFFF</Color>
+    <Color x:Key="secondText">#7E7E7E</Color>
 
 </ResourceDictionary>

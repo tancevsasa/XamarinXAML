@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using UIKit;
 
@@ -23,9 +20,15 @@ namespace XamarinXAML.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            InitControls();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+
+            void InitControls()
+            {
+                CarouselViewRenderer.Init();
+            }
         }
     }
 }

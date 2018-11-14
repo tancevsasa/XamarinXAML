@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
-using XamarinXAML.ViewModels;
 
 namespace XamarinXAML
 {
@@ -13,12 +8,15 @@ namespace XamarinXAML
         public MainPage()
         {
             InitializeComponent();
-            this.BindingContext = new ChatPageViewModel();
-        }
 
-        public void OnListTapped(object sender, ItemTappedEventArgs e)
-        {
-            chatInput.UnFocusEntry();
+            var photoList = new List<string>
+            {
+                "Background.png",
+                "Background.png",
+                "Background.png"
+            };
+            
+            MainCarousel.ItemsSource = photoList;
         }
     }
 }

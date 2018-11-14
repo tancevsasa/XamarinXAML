@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using CarouselView.FormsPlugin.Android;
 using Xamarin.Forms.Platform.Android;
 
 namespace XamarinXAML.Droid
@@ -19,9 +20,19 @@ namespace XamarinXAML.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+            InitControls();
+
+            Window.AddFlags(WindowManagerFlags.TranslucentStatus);
+
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
            LoadApplication(new App());
+        }
+
+        private void InitControls()
+        {
+            CarouselViewRenderer.Init();
         }
     }
 }
