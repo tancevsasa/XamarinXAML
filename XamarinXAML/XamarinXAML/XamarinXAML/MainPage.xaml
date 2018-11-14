@@ -12,12 +12,11 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-
-        <Grid>
+        <Grid RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="130"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -25,7 +24,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <carousel:CarouselViewControl x:Name="MainCarousel"
+            <carousel:CarouselViewControl x:Name="MainCarousel" Margin="0,0,0,10"
                                           Grid.Row="0" Grid.ColumnSpan="2"
                                           IndicatorsTintColor="Black"
                                           Orientation="Horizontal" 
@@ -37,86 +36,108 @@
                 </carousel:CarouselViewControl.ItemTemplate>
             </carousel:CarouselViewControl>
             
-            <Grid Grid.Row="1" Grid.ColumnSpan="2" Padding="20,0,20,0">
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" RowSpacing="0" Padding="20,0,20,0" BackgroundColor="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="25"/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Text="Nice Adidas sneakers" TextColor="{StaticResource textColor}" FontAttributes="Bold"/>
-                <Label Grid.Row="1" Text="This shoe is cool and it is almost not used.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" TextColor="{StaticResource secondText}" FontSize="Small"/>
-                <BoxView Grid.Row="2" HeightRequest="1" BackgroundColor="#E2E2E2"  Margin="-20,4,-20,0" />
-                <Label Grid.Row="3" Text="Size:43" VerticalTextAlignment="Center" TextColor="{StaticResource textColor}" FontAttributes="Bold"/>
-            </Grid>
-            
-            <Grid Grid.Row="2" Grid.ColumnSpan="2" Padding="20,0,20,0" RowSpacing="0"
-                  BackgroundColor="{StaticResource secondBackground}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="1"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Label Grid.Row="0" Grid.Column="0"
-                       HorizontalTextAlignment="Start"                    
-                       Text="About the Seller:" TextColor="{StaticResource textColor}"
-                       FontSize="Small" />
+                <Label Grid.Row="0"
+                       Text="Nice Adidas sneakers"
+                       TextColor="{StaticResource textColor}"
+                       FontAttributes="Bold"/>
+                <Label Grid.Row="1"
+                       Text="This shoe is cool and it is almost not used.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                       LineBreakMode="TailTruncation" MaxLines="3"
+                       TextColor="{StaticResource secondText}" FontSize="Small" Margin="0,0,0,10"/>
                 
-                <Image  Grid.Row="1" Grid.RowSpan="2" Grid.Column="0"
-                        Source="profilephoto.png" HorizontalOptions="Start"/>
-                <Label Grid.Row="1" Grid.Column="0"
-                       HorizontalTextAlignment="Center" VerticalTextAlignment="End"
-                       Text="Jacob H." TextColor="{StaticResource textColor}" 
-                       FontSize="Small" Margin="23,0,0,0"/>
+                <BoxView Grid.Row="2" Margin="-20,0,-20,0" BackgroundColor="#E2E2E2"/>
                 
-                <Label Grid.Row="2" Grid.Column="0"
-                       HorizontalTextAlignment="Center" VerticalTextAlignment="Start"
-                       FontSize="Small" Margin="{OnPlatform Android='23,0,0,0',iOS='45,0,0,0'}"
-                       Text="41 Years Old" TextColor="{StaticResource textColor}"/>
-                <Label Grid.Row="2" Grid.Column="1"
-                       HorizontalTextAlignment="Start"
-                       Text="2300 Copenhagen" TextColor="{StaticResource textColor}"
-                       FontSize="Small"/>
-                
-                <Button Grid.Row="3" Grid.Column="0"
-                        Margin="{OnPlatform Android='0,10,20,0',iOS='0,10,20,0'}"
-                        Padding="0" CornerRadius="20" 
-                        BackgroundColor="{StaticResource primaryButton}"
-                        Text="More from Seller" TextColor="White"/>
-                <Button Grid.Row="3" Grid.Column="1"
-                        Margin="{OnPlatform Android='0,10,20,0',iOS='0,10,20,0'}"
-                        Padding="0" CornerRadius="20"
-                        BackgroundColor="{StaticResource secondButton}"
-                        Text="Report" TextColor="White"/>
+                <Label Grid.Row="3"
+                       Margin="0,7,0,7" VerticalTextAlignment="Center"
+                       Text="Size: 43"
+                       TextColor="{StaticResource textColor}"
+                       FontAttributes="Bold"/>
             </Grid>
 
-            <Grid Grid.Row="3" Grid.ColumnSpan="2" RowSpacing="0" ColumnSpacing="0" Padding="0, 10, 0, 0" BackgroundColor="{StaticResource secondBackground}">
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" RowSpacing="0" ColumnSpacing="0"
+                  Padding="20,0,20,0" BackgroundColor="{StaticResource secondBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="54"/>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                       HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                       Text="About the Seller:"
+                       TextColor="{StaticResource textColor}"
+                       FontSize="Small" FontAttributes="Bold"/>
+
+                <Image  Grid.Row="1" Grid.RowSpan="2" Grid.Column="0"
+                        HorizontalOptions="Start" Aspect="AspectFit"
+                        Source="profilephoto.png"/>
+
+                <Label Grid.Row="1" Grid.Column="1"
+                       HorizontalTextAlignment="Start" VerticalTextAlignment="End"
+                       FontSize="Small" TextColor="{StaticResource textColor}" 
+                       Text="Jacob H."/>
+
+                <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                       HorizontalTextAlignment="Start" VerticalTextAlignment="Start"
+                       FontSize="Small" TextColor="Silver" LineBreakMode="TailTruncation" MaxLines="1">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="41 Years Old"/>
+                            <Span Text="   •   " TextColor="{StaticResource primaryButton}"/>
+                            <Span Text="2300 Copenhagen"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                        Padding="0" CornerRadius="17" Margin="0,10,20,10"
+                        BackgroundColor="{StaticResource primaryButton}"
+                        Text="More from Seller" FontSize="Small" TextColor="White"/>
+                <Button Grid.Row="3" Grid.Column="2"
+                        Padding="0" CornerRadius="17" Margin="20,10,0,10"
+                        BackgroundColor="{StaticResource secondButton}"
+                        Text="Report" FontSize="Small" TextColor="White"/>
+
+                <BoxView Grid.Row="4" Grid.ColumnSpan="3" BackgroundColor="#E2E2E2" Margin="-20,0,-20,0" />
+
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.ColumnSpan="2" RowSpacing="0" ColumnSpacing="0"
+                  Padding="0,10,0,0" BackgroundColor="{StaticResource secondBackground}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
                 <!--Messages in Row 0 -->
-                <ListView x:Name="MessagesListView" 
-			            ItemTemplate="{StaticResource MessageTemplateSelector}"
-			            ItemsSource="{Binding Messages}"
-			            HasUnevenRows="True"
-			            ItemSelected="MyListView_OnItemSelected" 
-			            ItemTapped="MyListView_OnItemTapped" 
-			            SeparatorVisibility="None"/>
+                <ListView x:Name="MessagesListView"
+                          BackgroundColor="{StaticResource secondBackground}"
+			              ItemTemplate="{StaticResource MessageTemplateSelector}"
+			              ItemsSource="{Binding Messages}"
+			              HasUnevenRows="True"
+			              ItemSelected="MyListView_OnItemSelected" 
+			              ItemTapped="MyListView_OnItemTapped" 
+			              SeparatorVisibility="None"/>
 
-                <Grid Grid.Row="1" Padding="5,10,5,5">
+                <Grid Grid.Row="1" Padding="5,10,5,5" BackgroundColor="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="6*"/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
 
                     <Image Grid.Column="0" Source="emoji.png" Margin="5"/>
