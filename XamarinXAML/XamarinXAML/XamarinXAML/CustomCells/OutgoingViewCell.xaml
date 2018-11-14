@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinXAML.CustomCells.OutgoingViewCell">
+
+    <Grid ColumnSpacing="2" Padding="0,0,20,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="15"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Row="0" Grid.Column="1" Padding="5" BackgroundColor="{StaticResource secondMessage}">
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+            </Frame.HasShadow>
+            <Label TextColor="Black"  Text="{Binding Text}"/>
+        </Frame>
+
+        <Label Grid.Row="1" Grid.Column="1"
+               FontSize="Micro" HorizontalTextAlignment="End"
+               Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}"
+               TextColor="Gray"/>
+
+    </Grid>
+
+</ViewCell>

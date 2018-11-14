@@ -5,10 +5,10 @@
 
     <Color x:Key="secondBackground">#FAFAFA</Color>
     <Color x:Key="textColor">#000000</Color>
-    <Color x:Key="fistButton">#5D94BD</Color>
+    <Color x:Key="primaryButton">#5D94BD</Color>
     <Color x:Key="secondButton">#D66C6E</Color>
-    <Color x:Key="firstMessage">#BFB6A7</Color>
-    <Color x:Key="secondMessage">#FFFFFF</Color>
+    <Color x:Key="firstMessage">#FFFFFF</Color>
+    <Color x:Key="secondMessage">#BFB6A7</Color>
     <Color x:Key="secondText">#7E7E7E</Color>
 
 </ResourceDictionary>
