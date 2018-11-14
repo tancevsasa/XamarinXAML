@@ -15,18 +15,15 @@
         </Grid.ColumnDefinitions>
 
         <skia:SKCanvasView Grid.Row="0" Grid.Column="0" PaintSurface="SKCanvasView_PaintSurface"/>
-        <Label Grid.Row="0" Grid.Column="0" Margin="10,5" VerticalTextAlignment="Center" TextColor="Black" FontSize="Small" Text="{Binding Text}"/>
-        <!--<Frame Grid.Row="0" Grid.Column="0" Padding="5">
-            <Frame.HasShadow>
-                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
-            </Frame.HasShadow>
-            <Label TextColor="Black" FontSize="Small" Text="{Binding Text}"/>
-        </Frame>-->
 
-        <Label Grid.Row="1" Grid.Column="0"
-               FontSize="Micro" HorizontalTextAlignment="End"
-               Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}"
-               TextColor="Gray"/>
+        <Label Style="{StaticResource MessageLabelStyle}"
+               Grid.Row="0" Grid.Column="0"
+               Margin="10,5"
+               Text="{Binding Text}"/>
+
+        <Label Style="{StaticResource MessageDateLabelStyle}"
+               Grid.Row="1" Grid.Column="0"
+               Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}"/>
 
     </Grid>
     

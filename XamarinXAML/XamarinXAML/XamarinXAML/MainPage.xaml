@@ -26,7 +26,8 @@
 
             <carousel:CarouselViewControl x:Name="MainCarousel" Margin="0,0,0,10"
                                           Grid.Row="0" Grid.ColumnSpan="2"
-                                          IndicatorsTintColor="Black"
+                                          IndicatorsTintColor="#959492"
+                                          CurrentPageIndicatorTintColor="#BDB3A7"
                                           Orientation="Horizontal"
                                           ShowIndicators="True">
                 <carousel:CarouselViewControl.ItemTemplate>
@@ -36,9 +37,9 @@
                 </carousel:CarouselViewControl.ItemTemplate>
                 <carousel:CarouselViewControl.ItemsSource>
                     <x:Array Type="{x:Type View}">
-                        <Image Source = "Background.png" Aspect="Fill" />
-                        <Image Source = "Background.png" Aspect="Fill" />
-                        <Image Source = "Background.png" Aspect="Fill" />
+                        <Image Source = "Background.png" Aspect="Fill"/>
+                        <Image Source = "Background.png" Aspect="Fill"/>
+                        <Image Source = "Background.png" Aspect="Fill"/>
                     </x:Array>
                 </carousel:CarouselViewControl.ItemsSource>
             </carousel:CarouselViewControl>
@@ -50,22 +51,22 @@
                     <RowDefinition Height="1"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0"
-                       Text="Nice Adidas sneakers"
-                       TextColor="{StaticResource textColor}"
-                       FontAttributes="Bold"/>
-                <Label Grid.Row="1"
+                
+                <Label Style="{StaticResource PrimaryLabelStyle}"
+                       Grid.Row="0"
+                       Text="Nice Adidas sneakers"/>
+
+                <Label Style="{StaticResource SecondaryLabelStyle}"
+                       Grid.Row="1"
                        Text="This shoe is cool and it is almost not used.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                       LineBreakMode="TailTruncation" MaxLines="4"
-                       TextColor="{StaticResource secondText}" FontSize="Small" Margin="0,0,0,10"/>
+                       LineBreakMode="TailTruncation" MaxLines="4" Margin="0,0,0,10"/>
                 
                 <BoxView Grid.Row="2" Margin="-20,0,-20,0" BackgroundColor="#E2E2E2"/>
-                
-                <Label Grid.Row="3"
-                       Margin="0,7,0,7" VerticalTextAlignment="Center"
-                       Text="Size: 43"
-                       TextColor="{StaticResource textColor}"
-                       FontAttributes="Bold"/>
+
+                <Label Style="{StaticResource PrimaryLabelStyle}"
+                       Grid.Row="3"
+                       Margin="0,7,0,7"
+                       Text="Size: 43"/>
             </Grid>
 
             <Grid Grid.Row="2" Grid.ColumnSpan="2" RowSpacing="0" ColumnSpacing="0"
@@ -129,8 +130,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-
-                <!--Messages in Row 0 -->
+                
                 <ListView x:Name="MessagesListView"
                           BackgroundColor="{StaticResource secondBackground}"
 			              ItemTemplate="{StaticResource MessageTemplateSelector}"

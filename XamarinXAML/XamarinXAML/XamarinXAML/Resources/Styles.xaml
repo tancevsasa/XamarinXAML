@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"             
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:resources="clr-namespace:XamarinXAML.Resources"             
+                    x:Class="XamarinXAML.Resources.Styles">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resources:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="PrimaryLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource textColor}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="SecondaryLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource secondText}"/>
+        <Setter Property="FontSize" Value="Small"/>
+    </Style>
+
+    <Style x:Key="MessageLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontSize" Value="Small"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="MessageDateLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Gray"/>
+        <Setter Property="FontSize" Value="Micro"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="End"/>
+    </Style>
+
+</ResourceDictionary>
