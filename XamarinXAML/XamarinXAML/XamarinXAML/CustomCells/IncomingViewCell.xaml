@@ -17,7 +17,7 @@
             <Frame.HasShadow>
                 <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
             </Frame.HasShadow>
-            <Label TextColor="Black"  Text="{Binding Text}"/>
+            <Label TextColor="Black" FontSize="Small" Text="{Binding Text}"/>
         </Frame>
 
         <Label Grid.Row="1" Grid.Column="0"
