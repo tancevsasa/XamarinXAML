@@ -1,5 +1,6 @@
 ﻿using CarouselView.FormsPlugin.iOS;
 using Foundation;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using UIKit;
 
 namespace XamarinXAML.iOS
@@ -20,15 +21,13 @@ namespace XamarinXAML.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            InitControls();
+
+            CarouselViewRenderer.Init();
+            KeyboardOverlapRenderer.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
-
-            void InitControls()
-            {
-                CarouselViewRenderer.Init();
-            }
         }
     }
 }

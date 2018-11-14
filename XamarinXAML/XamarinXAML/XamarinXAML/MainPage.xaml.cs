@@ -39,5 +39,15 @@ namespace XamarinXAML
         {
             MessagesListView.SelectedItem = null;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if(DependencyService.Get<IDevice>().HasSafeAreas())
+            {
+                Padding = new Thickness(0, 0, 0, 20);
+            }
+        }
     }
 }
