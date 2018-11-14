@@ -34,6 +34,13 @@
                         <Image Source="{Binding ., Mode=TwoWay}" Aspect="Fill"/>
                     </DataTemplate>
                 </carousel:CarouselViewControl.ItemTemplate>
+                <carousel:CarouselViewControl.ItemsSource>
+                    <x:Array Type="{x:Type View}">
+                        <Image Source = "Background.png" Aspect="Fill" />
+                        <Image Source = "Background.png" Aspect="Fill" />
+                        <Image Source = "Background.png" Aspect="Fill" />
+                    </x:Array>
+                </carousel:CarouselViewControl.ItemsSource>
             </carousel:CarouselViewControl>
             
             <Grid Grid.Row="1" Grid.ColumnSpan="2" RowSpacing="0" Padding="20,0,20,0" BackgroundColor="White">
@@ -133,7 +140,7 @@
 			              ItemTapped="MyListView_OnItemTapped" 
 			              SeparatorVisibility="None"/>
 
-                <Grid Grid.Row="1" Padding="5" BackgroundColor="White">
+                <Grid Grid.Row="1" Padding="5,10,5,5" BackgroundColor="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="7*"/>

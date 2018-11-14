@@ -12,14 +12,14 @@ namespace XamarinXAML
         {
             InitializeComponent();
 
-            var photoList = new List<string>
-            {
-                "Background.png",
-                "Background.png",
-                "Background.png"
-            };
+            //var photoList = new List<string>
+            //{
+            //    "Background.png",
+            //    "Background.png",
+            //    "Background.png"
+            //};
             
-            MainCarousel.ItemsSource = photoList;
+            //MainCarousel.ItemsSource = photoList;
 
             BindingContext = vm = new ChatViewModel();
 
