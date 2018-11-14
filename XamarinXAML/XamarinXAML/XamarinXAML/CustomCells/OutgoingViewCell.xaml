@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinXAML.CustomCells.OutgoingViewCell">
+          xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+          x:Class="XamarinXAML.CustomCells.OutgoingViewCell">
 
     <Grid ColumnSpacing="2" Padding="0,0,20,5">
         <Grid.RowDefinitions>
@@ -13,12 +14,8 @@
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Frame Grid.Row="0" Grid.Column="1" Padding="5" BackgroundColor="{StaticResource secondMessage}">
-            <Frame.HasShadow>
-                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
-            </Frame.HasShadow>
-            <Label TextColor="Black" FontSize="Small" Text="{Binding Text}"/>
-        </Frame>
+        <skia:SKCanvasView Grid.Row="0" Grid.Column="1" PaintSurface="SKCanvasView_PaintSurface"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,5" VerticalTextAlignment="Center" TextColor="Black" FontSize="Small" Text="{Binding Text}"/>
 
         <Label Grid.Row="1" Grid.Column="1"
                FontSize="Micro" HorizontalTextAlignment="End"
