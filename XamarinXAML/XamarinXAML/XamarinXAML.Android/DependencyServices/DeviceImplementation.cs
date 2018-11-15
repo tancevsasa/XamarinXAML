@@ -9,21 +9,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Xamarin.Forms;
+using XamarinXAML.Droid.DependencyServices;
 
-namespace XamarinXAML.Droid
+[assembly: Dependency(typeof(DeviceImplementation))]
+namespace XamarinXAML.Droid.DependencyServices
 {
     public class DeviceImplementation : IDevice
     {
         public bool HasSafeAreas()
         {
-            if (UIDevice.CurrentDevice.CheckSystemVersion(11, 0))
-            {
-                return UIApplication.SharedApplication.KeyWindow.SafeAreaInsets != UIEdgeInsets.Zero;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
 }
