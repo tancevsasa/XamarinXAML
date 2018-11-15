@@ -11,7 +11,8 @@ namespace XamarinXAML.iOS.DependencyServices
         {
             if (UIDevice.CurrentDevice.CheckSystemVersion(11, 0))
             {
-                return UIApplication.SharedApplication.KeyWindow.SafeAreaInsets != UIEdgeInsets.Zero;
+                var mika= UIApplication.SharedApplication.KeyWindow.SafeAreaInsets.Bottom != 0;
+                return mika;
             }
             else
             {
