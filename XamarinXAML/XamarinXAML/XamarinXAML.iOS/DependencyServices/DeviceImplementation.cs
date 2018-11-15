@@ -1,9 +1,9 @@
 ﻿using UIKit;
 using Xamarin.Forms;
-using XamarinXAML.iOS;
+using XamarinXAML.iOS.DependencyServices;
 
 [assembly: Dependency(typeof(DeviceImplementation))]
-namespace XamarinXAML.iOS
+namespace XamarinXAML.iOS.DependencyServices
 {
     public class DeviceImplementation : IDevice
     {
