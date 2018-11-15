@@ -153,7 +153,7 @@
 				           Placeholder="Write message..." 
 				           Text="{Binding OutGoingText}"
                            FontSize="Small"/>
-                    <Button Grid.Column="2" Text="Send" FontSize="Small"
+                    <Button Grid.Column="2" Text="SEND" FontSize="Small"
                             Margin="5,5,0,5" Padding="0"
                             CornerRadius="{OnPlatform Android=15, iOS=12}"
                             BackgroundColor="{StaticResource primaryButton}"

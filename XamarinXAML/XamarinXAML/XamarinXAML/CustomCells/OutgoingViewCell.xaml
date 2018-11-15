@@ -17,6 +17,7 @@
         <skia:SKCanvasView Grid.Row="0" Grid.Column="1" PaintSurface="SKCanvasView_PaintSurface"/>
         
         <Label Style="{StaticResource MessageLabelStyle}"
+               TextColor="White"
                Grid.Row="0" Grid.Column="1"
                Margin="10,5"
                Text="{Binding Text}"/>

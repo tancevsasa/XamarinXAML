@@ -7002,6 +7002,9 @@ namespace XamarinXAML.Droid
 			// aapt resource value: 0x7f0c0193
 			public const int MainTheme_Base = 2131493267;
 			
+			// aapt resource value: 0x7f0c0195
+			public const int MyTextAppearance_Material_Button = 2131493269;
+			
 			// aapt resource value: 0x7f0c002d
 			public const int Platform_AppCompat = 2131492909;
 			

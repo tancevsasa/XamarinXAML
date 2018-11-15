@@ -23,6 +23,7 @@
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="FontSize" Value="Small"/>
         <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontAttributes" Value="Italic"/>
     </Style>
 
     <Style x:Key="MessageDateLabelStyle" TargetType="Label">
